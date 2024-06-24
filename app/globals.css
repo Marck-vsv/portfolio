@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+@layer base {
+    * {
+        @apply box-border m-0 p-0
+    }
+    
+    body {
+        @apply bg-primary text-tertiary
+    }
+}
+
+@media  {
+    
+}
