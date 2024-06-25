@@ -13,13 +13,13 @@ export default function HomePage () {
             >
                 <Nav/>
                 
-                <SectionBody className={"flex items-center mt-24"}>
-                    <div className={"flex flex-col gap-4"}>
-                        <span className={"text-xl"}>
+                <SectionBody className={"flex items-center mt-24 justify-between"}>
+                    <div className={"flex flex-col gap-4 w-fit"}>
+                        <span className={"text-xl w-fit"}>
                             Software developer
                         </span>
                         
-                        <div className={"text-5xl xl:text-6xl"}>
+                        <div className={"text-5xl xl:text-6xl w-fit"}>
                             <h1 className={""}>
                                 Hello, I'm
                             </h1>
@@ -29,7 +29,7 @@ export default function HomePage () {
                         </div>
                         
                         <p
-                            className={"w-4/5 whitespace-break-spaces"}
+                            className={"w-full max-w-xl break-words whitespace-pre-line hyphens-auto"}
                         >
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum finibus nec risus nec blandit. Vestibulum eget lacus consequat, tincidunt quam nec, egestas velit.
                         </p>
@@ -42,9 +42,9 @@ export default function HomePage () {
                         </Link>
                     </div>
                     
-                    <div className={"hidden lg:block relative w-full xl:w-3/6 max-w-2xl aspect-square overflow-hidden"}>
+                    <div className={"hidden lg:block relative w-full xl:w-3/6 max-w-[30rem] aspect-square overflow-hidden"}>
                         <Image 
-                            className={"rounded-full border-accent max-w-2xl border-2 p-4"}
+                            className={"rounded-full border-accent max-w-2xl border-4 p-4"}
                             src={"https://github.com/Marck-vsv.png"}
                             alt={"Image pfp"}
                             layout={"fill"}  

@@ -24,6 +24,7 @@ const config: Config = {
             lg: '960px',
             xl: '1200px',
             "2xl": "1560px",
+            "3xl": "1800px"
         },
         fontFamily: {
             primary: "var(--font-jetbrains)",  
