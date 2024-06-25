@@ -3,7 +3,16 @@
 @tailwind utilities;
 
 html {
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+}
+
+section {
+    scroll-snap-align: start;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 @layer base {
@@ -14,8 +23,4 @@ html {
     body {
         @apply bg-primary text-tertiary
     }
-}
-
-@media  {
-    
 }

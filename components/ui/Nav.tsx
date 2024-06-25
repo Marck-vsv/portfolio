@@ -3,7 +3,13 @@ import React, { HTMLProps, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
+// import { CiMenuFries } from "react-icons/ci";
+
 const options = [
+    {
+        title: "home",
+        href: "#home"
+    },
     {
         title: "about",
         href: "#about",
@@ -31,17 +37,26 @@ export const Nav = () => {
     const afterStyle: HTMLProps<HTMLElement>["className"] = `after:content-[';'] after:text-accent`
     const beforeStyle: HTMLProps<HTMLElement>["className"] = `before:content-['.'] before:text-accent`
     
+    // const mobileNav: HTMLProps<HTMLElement>["className"] = ``
+    
     return (
-        <div className={`flex justify-between items-center mt-4 lg:mt-0`}>
-            <a href={"/"} className={`text-4xl ml-6 ${beforeStyle} ${afterStyle}`}>
+        <div className={`sticky top-4 lg:top-0 flex justify-between items-center z-10`}>
+            <a href={"#home"} className={`text-4xl ml-6 ${beforeStyle} ${afterStyle}`}>
                 Marck
             </a>
-            <nav className={`p-4 hidden lg:flex items-center whitespace-nowrap`}>
-                <ListWrapper />
-            </nav>
+            
+            <DesktopNav/>
         </div>
     );
 };
+
+const DesktopNav = () => {
+    return (
+        <nav className={`p-4 hidden lg:flex items-center whitespace-nowrap`}>
+            <ListWrapper/>
+        </nav>
+    )
+}
 
 const ListWrapper = () => {
     const [position, setPosition] = useState({
@@ -60,7 +75,7 @@ const ListWrapper = () => {
                     opacity: 0,
                 }));
             }}
-            className="relative mx-auto flex w-fit rounded-full p-1"
+            className="relative mx-auto hidden lg:flex w-fit rounded-full p-1"
         >
             {options.map((item, index) => (
                 <ListItem 

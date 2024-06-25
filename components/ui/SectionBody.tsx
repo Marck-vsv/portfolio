@@ -8,7 +8,7 @@ const SectionBody = ({
     className?: string
 }) => {
     return (
-        <div className={`w-4/5 mx-auto ${className}`}>
+        <div className={`mt-32 w-4/5 mx-auto ${className}`}>
             {children}
         </div>
     )

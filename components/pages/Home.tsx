@@ -1,19 +1,24 @@
 import DefaultSection from "@/components/ui/Section";
 import SectionBody from "@/components/ui/SectionBody";
 import Link from "next/link";
-import {Nav} from "@/components/ui/Nav";
 import Image from "next/image";
+import React from "react";
 
-export default function HomePage () {
+export default function HomePage ({
+    ref,
+    id
+}: {
+    ref?: React.Ref<any>
+    id?: string
+}) {
     return (
         <>
             <DefaultSection 
-                id={"home"}
+                ref={ref}
+                id={`${id}`}
                 className={"relative"}
             >
-                <Nav/>
-                
-                <SectionBody className={"flex items-center mt-24 justify-between"}>
+                <SectionBody className={"flex items-center justify-between"}>
                     <div className={"flex flex-col gap-4 w-fit"}>
                         <span className={"text-xl w-fit"}>
                             Software developer

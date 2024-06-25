@@ -9,9 +9,6 @@ const stairAnimation = {
     animate: {
         top: "100%",
     },
-    exit: {
-        top: ["100%", "0%"],
-    }
 }
 
 const reverseIndex = (index: any) => {
@@ -28,7 +25,6 @@ const Stairs = () => {
                     variants={stairAnimation}
                     initial={"initial"}
                     animate={"animate"}
-                    exit={"exit"}
                     transition={{
                         duration: 0.4,
                         ease: "easeInOut",
