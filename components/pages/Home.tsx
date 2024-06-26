@@ -12,12 +12,11 @@ export default function HomePage ({
     id?: string
 }) {
     return (
-        <>
-            <DefaultSection 
-                ref={ref}
-                id={`${id}`}
-                className={"relative"}
-            >
+        <DefaultSection 
+            ref={ref}
+            id={`${id}`}
+            className={"relative"}
+        >
                 <SectionBody className={"flex items-center justify-between"}>
                     <div className={"flex flex-col gap-4 w-fit"}>
                         <span className={"text-xl w-fit"}>
@@ -82,6 +81,5 @@ export default function HomePage ({
                     </div>
                 </SectionBody>
             </DefaultSection>
-        </>
     )
 }

@@ -15,7 +15,7 @@ const DefaultSection = ({
         <section
             ref={ref}
             id={id}    
-            className={`mx-auto overflow-hidden bg-primary w-full lg:h-screen h-full border-b-2 border-accent border-opacity-5 ${className}`}
+            className={`mx-auto overflow-hidden bg-primary w-full lg:h-screen h-full ${className}`}
         >
             {children}
         </section>

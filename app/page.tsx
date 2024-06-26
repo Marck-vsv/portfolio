@@ -6,12 +6,12 @@ import Experience from "@/components/pages/Experience";
 import Projects from "@/components/pages/Projects";
 import Skills from "@/components/pages/Skills";
 import Contact from "@/components/pages/Contact";
-import {Nav} from "@/components/ui/Nav";
+import {Header} from "@/components/ui/Header";
 
 function Home () {
     return (
         <main className={"w-full h-full"}>
-            <Nav/>
+            <Header/>
             <HomePage id={"home"}/>
             <About id={"about"}/>
             <Skills id={"skills"}/>

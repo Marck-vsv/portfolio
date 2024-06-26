@@ -25,7 +25,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={jMono.className}>
                 <StairTransition/>
-                {/*<Nav/>*/}
+                {/*<Header/>*/}
                 {children}
             </body>
         </html>
