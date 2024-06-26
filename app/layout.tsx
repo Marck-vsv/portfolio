@@ -3,7 +3,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import React from "react";
 
-import StairTransition from "@/components/ui/EnterAnimation";
+import StairTransition from "@/components/animations/EnterAnimation";
 
 const jMono = JetBrains_Mono({ 
     subsets: ["latin"],
