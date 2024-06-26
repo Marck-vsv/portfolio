@@ -11,6 +11,24 @@ export default function HomePage ({
     ref?: React.Ref<any>
     id?: string
 }) {
+    const [relatoryInfos, setRelatoryInfos] = useState<{numbers: number, text: string}[] | []>([])
+
+    useEffect(() => {
+        // Pega dados
+        const retorno = [{info: "Repositories", values: '00+'}, {info: "Repositories", values: '00+'}, {info: "Repositories", values: '00+'}, {info: "Repositories", values: '00+'}]
+
+        // Trata dados
+        const treatedRetorno = retorno.map(item => {
+            return {
+                numbers: item.values,
+                text: item.info
+            }
+        })
+
+        setRelatoryInfos(treatedRetorno)
+    }, [])
+
+
     return (
         <>
             <DefaultSection 
@@ -60,25 +78,14 @@ export default function HomePage ({
                 
                 <SectionBody className={"lg:absolute lg:bottom-11 lg:left-1/2 lg:-translate-x-1/2"}>
                     <div className={"mt-10 mb-10 lg:mb-0 lg:mt-36 grid grid-cols-2 gap-4 md:gap-0 md:flex justify-between text-center"}>
-                        <div>
-                            <span className={"text-accent text-4xl "}>00+</span> <br/>
-                            <span className={"w-1/3 whitespace-break-spaces"}>Repositories</span>
-                        </div>
-                        
-                        <div>
-                            <span className={"text-accent text-4xl "}>00+</span> <br/>
-                            <span className={"w-1/3 whitespace-break-spaces"}>Repositories</span>
-                        </div>
-                        
-                        <div>
-                            <span className={"text-accent text-4xl "}>00+</span> <br/>
-                            <span className={"w-1/3 whitespace-break-spaces"}>Repositores</span>
-                        </div>
-                        
-                        <div>
-                            <span className={"text-accent text-4xl "}>00+</span> <br/>
-                            <span className={"w-1/3 whitespace-break-spaces"}>Repositories</span>
-                        </div>
+                        {relatoryInfos.map((relatory) => {
+                            return (
+                                <div>
+                                    <span className={"text-accent text-4xl "}>relatory.numbers</span> <br/>
+                                    <span className={"w-1/3 whitespace-break-spaces"}>relatory.text</span>
+                                </div>
+                            )
+                        })}
                     </div>
                 </SectionBody>
             </DefaultSection>

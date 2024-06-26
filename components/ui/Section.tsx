@@ -1,16 +1,17 @@
 import React from "react";
 
+interface IDefaultSection extends HTMLAttributes {
+    children?: React.ReactNode
+    id: string
+    ref?: React.Ref<any>
+}
+
 const DefaultSection = ({
     children,
     className,
     id,
     ref
-}: {
-    children?: React.ReactNode
-    className?: string
-    id: string
-    ref?: React.Ref<any>
-}) => {
+}: IDefaultSection) => {
     return (
         <section
             ref={ref}

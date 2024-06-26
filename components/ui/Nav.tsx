@@ -36,23 +36,31 @@ const options = [
 export const Nav = () => {
     const afterStyle: HTMLProps<HTMLElement>["className"] = `after:content-[';'] after:text-accent`
     const beforeStyle: HTMLProps<HTMLElement>["className"] = `before:content-['.'] before:text-accent`
-    
-    // const mobileNav: HTMLProps<HTMLElement>["className"] = ``
-    
+     
     return (
         <div className={`sticky top-4 lg:top-0 flex justify-between items-center z-10`}>
             <a href={"#home"} className={`text-4xl ml-6 ${beforeStyle} ${afterStyle}`}>
                 Marck
             </a>
             
+            <MobileNav />
             <DesktopNav/>
         </div>
     );
 };
 
+const MobileNav = () => {
+    return (
+        <nav className={`p-4 hidden lg:flex items-center whitespace-nowrap flex md:hidden`}>
+            <ListWrapper/>
+        </nav>
+    )
+}
+
+
 const DesktopNav = () => {
     return (
-        <nav className={`p-4 hidden lg:flex items-center whitespace-nowrap`}>
+        <nav className={`p-4 hidden lg:flex items-center whitespace-nowrap hidden md:flex`}>
             <ListWrapper/>
         </nav>
     )
