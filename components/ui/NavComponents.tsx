@@ -10,10 +10,6 @@ const options = [
         href: "#home"
     },
     {
-        title: "about",
-        href: "#about",
-    },
-    {
         title: "skills",
         href: "#skills",
     },
