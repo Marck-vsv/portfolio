@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
-import "./globals.css";
 import React from "react";
+import "./globals.css";
 
 import StairTransition from "@/components/animations/EnterAnimation";
 
-const jMono = JetBrains_Mono({ 
+const jMono = JetBrains_Mono({
     subsets: ["latin"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-    variable: "--font-jetbrains"
+    variable: "--font-jetbrains",
 });
 
 export const metadata: Metadata = {
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+    children,
+}: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
         <html lang="en">
             <body className={jMono.className}>
-                <StairTransition/>
+                <StairTransition />
                 {/*<Header/>*/}
                 {children}
             </body>
