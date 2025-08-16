@@ -40,7 +40,7 @@ const AnimatedPointer = ({position}: any) => {
 };
 
 const NavItem = ({ setPosition, children }: any) => {
-    const ref = useRef(null);
+    const ref = useRef<HTMLLIElement>(null);
     
     return (
         <li
@@ -48,10 +48,8 @@ const NavItem = ({ setPosition, children }: any) => {
             onMouseEnter={() => {
                 if (!ref?.current) return;
 
-                // @ts-ignore
                 const { width } = ref.current.getBoundingClientRect();
 
-                // @ts-ignore
                 setPosition({
                     left: ref.current.offsetLeft,
                     opacity: 1,
