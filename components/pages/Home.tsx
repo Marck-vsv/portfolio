@@ -54,7 +54,7 @@ export default function HomePage ({
             id={`${id}`}
             className={"relative justify-center lg:justify-start pt-16 md:pt-20"}
         >
-            <SectionBody className={"flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8"}>
+            <SectionBody className={"lg:flex-row items-center justify-center lg:justify-between gap-8"}>
             <div className="flex justify-between w-full">
             
                 {/* Text Content */}
