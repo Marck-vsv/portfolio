@@ -19,7 +19,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: <FiLinkedin size={24} />,
-    link: "#"
+    link: "#https://www.linkedin.com/in/vinisv/"
   },
 ];
 
