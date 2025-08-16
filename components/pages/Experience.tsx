@@ -35,9 +35,9 @@ export default function Experience({
     <DefaultSection
       ref={ref}
       id={`${id}`}
-      className={"!bg-primary w-full h-screen"}
+      className={"!bg-primary w-full h-screen flex flex-col"}
     >
-      <SectionBody className={"pt-12"}>
+      <SectionBody className={"pt-12 flex-grow overflow-y-auto"}>
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-accent mb-4">Experience</h2>
           <p className="text-tertiary max-w-2xl mx-auto">
@@ -45,7 +45,7 @@ export default function Experience({
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto pb-12">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
