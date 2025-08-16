@@ -54,15 +54,13 @@ export default function HomePage ({
             id={`${id}`}
             className={"relative justify-center lg:justify-start pt-16 md:pt-20"}
         >
-            <SectionBody className={"lg:flex-row items-center justify-center lg:justify-between gap-8"}>
-            <div className="flex justify-between w-full">
-            
+            <SectionBody className={"flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8"}>
                 {/* Text Content */}
                 <div className={"flex flex-col gap-4 items-center lg:items-start text-center lg:text-left"}>
                     <span className={"text-xl"}>
                         Software developer
                     </span>
-                     
+                    
                     <div className={"text-4xl md:text-5xl xl:text-6xl"}>
                         <h1>
                             Hello, I'm
@@ -96,8 +94,9 @@ export default function HomePage ({
                         objectFit={"contain"}
                     />
                 </div>
-            </div>
-
+            </SectionBody>
+            
+            <SectionBody className={"lg:absolute lg:bottom-11 lg:left-1/2 lg:-translate-x-1/2 w-full"}>
                 <div className={"mt-16 lg:mt-0 grid grid-cols-2 md:grid-cols-4 gap-4 text-center"}>
                     {stats.map((stat, index) => (
                         <div key={index} className="px-2">
