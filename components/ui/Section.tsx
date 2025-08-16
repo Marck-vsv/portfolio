@@ -15,7 +15,7 @@ const DefaultSection = ({
         <section
             ref={ref}
             id={id}    
-            className={`mx-auto bg-primary w-full h-screen flex flex-col py-16 md:py-24 ${className}`}
+            className={`mx-auto bg-primary w-full flex flex-col py-10 md:py-16 ${className}`}
         >
             {children}
         </section>
