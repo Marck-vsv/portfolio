@@ -62,7 +62,7 @@ export default function HomePage ({
                     <span className={"text-xl"}>
                         Software developer
                     </span>
-                    
+                     
                     <div className={"text-4xl md:text-5xl xl:text-6xl"}>
                         <h1>
                             Hello, I'm
