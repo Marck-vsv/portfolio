@@ -75,7 +75,7 @@ export const DesktopNav = () => {
     const pathname = usePathname();
     
     return (
-        <nav className={"p-4 hidden lg:flex items-center whitespace-nowrap"}>
+        <nav className={"p-2 hidden lg:flex items-center whitespace-nowrap"}>
             <ul
                 onMouseLeave={() => {
                     setPosition((values) => ({
