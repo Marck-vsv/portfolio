@@ -3,6 +3,7 @@ import DefaultSection from "@/components/ui/Section";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 const socialLinks = [
   {
@@ -80,13 +81,10 @@ export default function Contact({
       className={"!bg-primary"}
     >
       <SectionBody>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">Contact</h2>
-          <p className="text-tertiary max-w-2xl mx-auto">
-            Have a project in mind or want to chat? Feel free to reach out!
-          </p>
-        </div>
-        
+        <SectionTitle 
+          title="Contact"
+          subtitle="Have a project in mind or want to chat? Feel free to reach out!"
+        />
         <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
           <motion.div 
             className="lg:w-1/2"

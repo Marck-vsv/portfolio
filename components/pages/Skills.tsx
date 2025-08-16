@@ -1,7 +1,8 @@
 import SectionBody from "@/components/ui/SectionBody";
 import DefaultSection from "@/components/ui/Section";
 import React from "react";
-import { motion } from "framer-motion";
+import SectionTitle from "@/components/ui/SectionTitle";
+import SkillCard from "@/components/ui/SkillCard";
 
 const skills = [
   {
@@ -45,44 +46,13 @@ export default function Skills({
       className={"!bg-secondary"}
     >
       <SectionBody>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">Skills</h2>
-          <p className="text-tertiary max-w-2xl mx-auto">
-            Here are some of the technologies and tools I work with
-          </p>
-        </div>
-        
+        <SectionTitle 
+          title="Skills"
+          subtitle="Here are some of the technologies and tools I work with"
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skills.map((skillCategory, index) => (
-            <motion.div
-              key={skillCategory.category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-primary border border-accent rounded-lg p-6"
-            >
-              <h3 className="text-xl md:text-2xl font-bold text-accent mb-4">
-                {skillCategory.category}
-              </h3>
-              <div className="space-y-4">
-                {skillCategory.items.map((skill, skillIndex) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-tertiary">{skill.name}</span>
-                      <span className="text-accent">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2">
-                      <motion.div
-                        className="bg-accent h-2 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: (index * 0.1) + (skillIndex * 0.1) }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+            <SkillCard key={skillCategory.category} skillCategory={skillCategory} index={index} />
           ))}
         </div>
       </SectionBody>

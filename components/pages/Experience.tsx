@@ -1,7 +1,8 @@
 import SectionBody from "@/components/ui/SectionBody";
 import DefaultSection from "@/components/ui/Section";
 import React from "react";
-import { motion } from "framer-motion";
+import SectionTitle from "@/components/ui/SectionTitle";
+import ExperienceCard from "@/components/ui/ExperienceCard";
 
 const experiences = [
   {
@@ -38,32 +39,13 @@ export default function Experience({
       className={"!bg-primary"}
     >
       <SectionBody>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">Experience</h2>
-          <p className="text-tertiary max-w-2xl mx-auto">
-            My professional journey and the experiences that shaped my skills
-          </p>
-        </div>
-        
+        <SectionTitle 
+          title="Experience"
+          subtitle="My professional journey and the experiences that shaped my skills"
+        />
         <div className="max-w-4xl mx-auto pb-12">
           {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="mb-10 relative pl-8 border-l-2 border-accent"
-            >
-              <div className="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-0"></div>
-              <div className="bg-secondary p-6 rounded-lg shadow-lg">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-                  <h3 className="text-xl md:text-2xl font-bold text-tertiary">{exp.title}</h3>
-                  <span className="text-accent font-semibold">{exp.period}</span>
-                </div>
-                <h4 className="text-xl text-accent mb-3">{exp.company}</h4>
-                <p className="text-tertiary">{exp.description}</p>
-              </div>
-            </motion.div>
+            <ExperienceCard key={index} experience={exp} index={index} />
           ))}
         </div>
       </SectionBody>
