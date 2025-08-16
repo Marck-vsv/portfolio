@@ -39,7 +39,7 @@ export default function Experience({
     >
       <SectionBody className={"pt-12 flex-grow overflow-y-auto"}>
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-accent mb-4">Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">Experience</h2>
           <p className="text-tertiary max-w-2xl mx-auto">
             My professional journey and the experiences that shaped my skills
           </p>
@@ -57,7 +57,7 @@ export default function Experience({
               <div className="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-0"></div>
               <div className="bg-secondary p-6 rounded-lg shadow-lg">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-                  <h3 className="text-2xl font-bold text-tertiary">{exp.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-tertiary">{exp.title}</h3>
                   <span className="text-accent font-semibold">{exp.period}</span>
                 </div>
                 <h4 className="text-xl text-accent mb-3">{exp.company}</h4>

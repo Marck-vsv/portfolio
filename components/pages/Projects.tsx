@@ -44,7 +44,7 @@ export default function Projects({
     >
       <SectionBody className={"pt-12"}>
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-accent mb-4">Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">Projects</h2>
           <p className="text-tertiary max-w-2xl mx-auto">
             Some of my recent projects. Each one is a unique challenge and learning experience.
           </p>
@@ -61,7 +61,7 @@ export default function Projects({
             >
               <div className="p-6 flex flex-col flex-grow">
                 <div>
-                  <h3 className="text-2xl font-bold text-tertiary mb-2">{project.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-tertiary mb-2">{project.title}</h3>
                   <p className="text-tertiary mb-4">{project.description}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-6">

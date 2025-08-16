@@ -46,7 +46,7 @@ export default function Skills({
     >
       <SectionBody className={"pt-12"}>
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-accent mb-4">Skills</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">Skills</h2>
           <p className="text-tertiary max-w-2xl mx-auto">
             Here are some of the technologies and tools I work with
           </p>
@@ -61,7 +61,7 @@ export default function Skills({
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-primary border border-accent rounded-lg p-6"
             >
-              <h3 className="text-2xl font-bold text-accent mb-4">
+              <h3 className="text-xl md:text-2xl font-bold text-accent mb-4">
                 {skillCategory.category}
               </h3>
               <div className="space-y-4">

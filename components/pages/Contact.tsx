@@ -81,7 +81,7 @@ export default function Contact({
     >
       <SectionBody className={"pt-12"}>
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-accent mb-4">Contact</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">Contact</h2>
           <p className="text-tertiary max-w-2xl mx-auto">
             Have a project in mind or want to chat? Feel free to reach out!
           </p>
@@ -94,7 +94,7 @@ export default function Contact({
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-bold text-tertiary mb-6">Get in touch</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-tertiary mb-6">Get in touch</h3>
             <p className="text-tertiary mb-8">
               I'm currently available for freelance work and open to new opportunities. 
               Whether you have a question or just want to say hi, I'll try my best to get back to you!
