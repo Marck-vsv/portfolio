@@ -57,24 +57,26 @@ export default function Projects({
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-primary border border-accent rounded-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="bg-primary border border-accent rounded-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col"
             >
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-tertiary mb-2">{project.title}</h3>
-                <p className="text-tertiary mb-4">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex} 
-                      className="text-xs bg-accent text-primary px-2 py-1 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              <div className="p-6 flex flex-col flex-grow">
+                <div>
+                  <h3 className="text-2xl font-bold text-tertiary mb-2">{project.title}</h3>
+                  <p className="text-tertiary mb-4">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex} 
+                        className="text-xs bg-accent text-primary px-2 py-1 rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 
-                <div className="flex gap-4">
+                <div className="flex gap-4 mt-auto pt-4">
                   <Link 
                     href={project.github} 
                     className="flex items-center gap-2 text-tertiary hover:text-accent transition-colors"
