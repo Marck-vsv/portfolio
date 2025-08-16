@@ -1,15 +1,16 @@
 import SectionBody from "@/components/ui/SectionBody";
 import DefaultSection from "@/components/ui/Section";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 import SectionTitle from "@/components/ui/SectionTitle";
+import emailjs from '@emailjs/browser';
 
 const socialLinks = [
   {
     name: "Email",
     icon: <FiMail size={24} />,
-    link: "mailto:marcos.vsv@outlook.com"
+    link: "mailto:vini.marcksv@gmail.com"
   },
   {
     name: "GitHub",
@@ -30,40 +31,45 @@ export default function Contact({
   ref?: React.Ref<any>
   id?: string
 }) {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  
+  const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState("");
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-  
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError("");
-    
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
-      
-      setTimeout(() => setSubmitSuccess(false), 5000);
-    } catch (error) {
-      setSubmitError("Something went wrong. Please try again.");
-    } finally {
+
+    if (!form.current) {
+      setSubmitError("An unexpected error occurred. Please try again.");
       setIsSubmitting(false);
+      return;
     }
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+        setSubmitError("Email configuration is missing. Please contact the administrator.");
+        setIsSubmitting(false);
+        return;
+    }
+
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+      .then(() => {
+        setSubmitSuccess(true);
+        form.current?.reset();
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      })
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+        setSubmitError("Something went wrong. Please try again.");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
   
   return (
@@ -114,15 +120,13 @@ export default function Contact({
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-tertiary mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="w-full bg-secondary border border-accent rounded-lg px-4 py-2 text-tertiary focus:outline-none focus:ring-2 focus:ring-accent"
                 />
@@ -134,8 +138,6 @@ export default function Contact({
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full bg-secondary border border-accent rounded-lg px-4 py-2 text-tertiary focus:outline-none focus:ring-2 focus:ring-accent"
                 />
@@ -146,8 +148,6 @@ export default function Contact({
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   rows={5}
                   className="w-full bg-secondary border border-accent rounded-lg px-4 py-2 text-tertiary focus:outline-none focus:ring-2 focus:ring-accent"
