@@ -40,7 +40,7 @@ export default function Projects({
     <DefaultSection
       ref={ref}
       id={`${id}`}
-      className={"!bg-secondary"}
+      className={"!bg-secondary justify-center"}
     >
       <SectionBody>
         <div className="text-center mb-16">
