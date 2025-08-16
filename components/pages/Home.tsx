@@ -93,7 +93,7 @@ export default function HomePage ({
                         layout={"fill"}  
                         objectFit={"contain"}
                     />
-                </div>lg:left-1/2 lg:-translate-x-1/2 w-full"}>
+                </div>
                 <div className={"mt-16 lg:mt-0 grid grid-cols-2 md:grid-cols-4 gap-4 text-center"}>
                     {stats.map((stat, index) => (
                         <div key={index} className="px-2">
