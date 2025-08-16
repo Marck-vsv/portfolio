@@ -4,7 +4,6 @@ import React from "react";
 import "./globals.css";
 
 import StairTransition from "@/components/animations/EnterAnimation";
-import { Header } from "@/components/ui/Header";
 
 const jMono = JetBrains_Mono({
     subsets: ["latin"],
@@ -26,7 +25,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={jMono.className}>
                 <StairTransition />
-                <Header/>
+                {/*<Header/>*/}
                 {children}
             </body>
         </html>
