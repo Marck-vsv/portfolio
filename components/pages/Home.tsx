@@ -94,6 +94,7 @@ export default function HomePage ({
                         objectFit={"contain"}
                     />
                 </div>
+
                 <div className={"mt-16 lg:mt-0 grid grid-cols-2 md:grid-cols-4 gap-4 text-center"}>
                     {stats.map((stat, index) => (
                         <div key={index} className="px-2">
