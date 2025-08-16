@@ -2,14 +2,14 @@ import SectionBody from "@/components/ui/SectionBody";
 import DefaultSection from "@/components/ui/Section";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FiMail, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 import SectionTitle from "@/components/ui/SectionTitle";
 
 const socialLinks = [
   {
     name: "Email",
     icon: <FiMail size={24} />,
-    link: "mailto:marcos@example.com"
+    link: "mailto:marcos.vsv@outlook.com"
   },
   {
     name: "GitHub",
@@ -20,7 +20,7 @@ const socialLinks = [
     name: "LinkedIn",
     icon: <FiLinkedin size={24} />,
     link: "https://www.linkedin.com/in/vinisv/"
-  },
+  }
 ];
 
 export default function Contact({
@@ -53,14 +53,11 @@ export default function Contact({
     setIsSubmitting(true);
     setSubmitError("");
     
-    // Simulação de envio do formulário
     try {
-      // Aqui você colocaria a lógica real de envio
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitSuccess(true);
       setFormData({ name: "", email: "", message: "" });
       
-      // Resetar o estado de sucesso após 5 segundos
       setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
       setSubmitError("Something went wrong. Please try again.");

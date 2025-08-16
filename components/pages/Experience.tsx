@@ -6,22 +6,16 @@ import ExperienceCard from "@/components/ui/ExperienceCard";
 
 const experiences = [
   {
-    title: "Frontend Developer",
-    company: "Tech Solutions Inc.",
-    period: "2022 - Present",
-    description: "Developing modern web applications using React and Next.js. Collaborating with design teams to implement responsive UI components."
+    title: "Full Stack Developer",
+    company: "Freelancer",
+    period: "2023 - Present",
+    description: "Desenvolvimento de aplicações web completas utilizando React, Next.js para o front-end e Node.js com NestJS para o back-end. Foco na criação de interfaces de usuário intuitivas e APIs robustas e escaláveis."
   },
   {
-    title: "Junior Developer",
-    company: "Digital Agency",
-    period: "2020 - 2022",
-    description: "Built and maintained client websites using HTML, CSS, and JavaScript. Participated in agile development processes."
-  },
-  {
-    title: "Intern Developer",
-    company: "StartupXYZ",
-    period: "2019 - 2020",
-    description: "Assisted in developing web applications with React. Learned best practices in version control and testing."
+    title: "Software Developer",
+    company: "PUC Minas",
+    period: "2022 - 2022",
+    description: "Participei do desenvolvimento de sistemas internos da universidade, utilizando Java e Spring Boot. Colaborei com equipes multidisciplinares para melhorar a eficiência dos processos acadêmicos."
   }
 ];
 

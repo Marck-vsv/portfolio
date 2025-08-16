@@ -7,21 +7,21 @@ import ProjectCard from "@/components/ui/ProjectCard";
 const projects = [
   {
     title: "E-commerce Platform",
-    description: "A full-featured e-commerce solution built with Next.js, TypeScript, and Stripe integration.",
+    description: "Desenvolvi uma plataforma de e-commerce completa com Next.js, integrando pagamentos seguros com Stripe e gerenciamento de estado avançado.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
     github: "#",
     demo: "#"
   },
   {
     title: "Task Management App",
-    description: "A productivity application for managing tasks and projects with real-time updates.",
+    description: "Criei um aplicativo de gerenciamento de tarefas colaborativo com atualizações em tempo real usando React e Firebase, focado em produtividade de equipes.",
     technologies: ["React", "Firebase", "Material UI", "Context API"],
     github: "#",
     demo: "#"
   },
   {
     title: "Portfolio Website",
-    description: "A responsive portfolio website showcasing projects and skills with smooth animations.",
+    description: "Este portfólio! Um site responsivo construído com Next.js e Framer Motion para mostrar minhas habilidades e projetos de forma interativa.",
     technologies: ["Next.js", "Framer Motion", "Tailwind CSS"],
     github: "#",
     demo: "#"

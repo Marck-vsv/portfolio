@@ -55,10 +55,9 @@ export default function HomePage ({
             className={"relative"}
         >
             <SectionBody className={"flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8"}>
-                {/* Text Content */}
                 <div className={"flex flex-col gap-4 items-center lg:items-start text-center lg:text-left"}>
                     <span className={"text-xl"}>
-                        Software developer
+                        Full Stack Developer
                     </span>
                     
                     <div className={"text-4xl md:text-5xl xl:text-6xl"}>
@@ -73,7 +72,7 @@ export default function HomePage ({
                     <p
                         className={"w-full max-w-xl break-words whitespace-pre-line hyphens-auto"}
                     >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum finibus nec risus nec blandit. Vestibulum eget lacus consequat, tincidunt quam nec, egestas velit.
+                        Apaixonado por tecnologia e sempre em busca de novos desafios, sou um desenvolvedor Full Stack com mais de 2 anos de experiência. Tenho um sólido conhecimento em tecnologias como React, Next.js, Node.js e TypeScript, criando soluções inovadoras e resolvendo problemas complexos.
                     </p>
                     
                     <Link
@@ -84,7 +83,6 @@ export default function HomePage ({
                     </Link>
                 </div>
                 
-                {/* Image */}
                 <div className={"relative w-full max-w-[20rem] md:max-w-[25rem] aspect-square"}>
                     <Image 
                         className={"rounded-full border-accent border-4 p-4"}
