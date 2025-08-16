@@ -21,11 +21,6 @@ const socialLinks = [
     icon: <FiLinkedin size={24} />,
     link: "#"
   },
-  {
-    name: "Twitter",
-    icon: <FiTwitter size={24} />,
-    link: "#"
-  }
 ];
 
 export default function Contact({
