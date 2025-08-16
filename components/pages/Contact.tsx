@@ -77,7 +77,7 @@ export default function Contact({
     <DefaultSection
       ref={ref}
       id={`${id}`}
-      className={"!bg-primary justify-center"}
+      className={"!bg-primary"}
     >
       <SectionBody>
         <div className="text-center mb-16">

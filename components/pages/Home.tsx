@@ -52,7 +52,7 @@ export default function HomePage ({
         <DefaultSection 
             ref={ref}
             id={`${id}`}
-            className={"relative justify-center lg:justify-start pt-16 md:pt-20"}
+            className={"relative"}
         >
             <SectionBody className={"flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8"}>
                 {/* Text Content */}
@@ -97,7 +97,7 @@ export default function HomePage ({
             </SectionBody>
             
             <SectionBody className={"lg:absolute lg:bottom-11 lg:left-1/2 lg:-translate-x-1/2 w-full"}>
-                <div className={"mt-16 lg:mt-0 grid grid-cols-2 md:grid-cols-4 gap-4 text-center"}>
+                <div className={"mt-10 mb-10 lg:mb-0 lg:mt-0 grid grid-cols-2 md:grid-cols-4 gap-4 text-center"}>
                     {stats.map((stat, index) => (
                         <div key={index} className="px-2">
                             <span className={"text-accent text-3xl md:text-4xl font-bold"}>{stat.value}</span> <br/>
