@@ -6,16 +6,28 @@ import ExperienceCard from "@/components/ui/ExperienceCard";
 
 const experiences = [
   {
-    title: "Full Stack Developer",
-    company: "Freelancer",
-    period: "2023 - Present",
-    description: "Desenvolvimento de aplicações web completas utilizando React, Next.js para o front-end e Node.js com NestJS para o back-end. Foco na criação de interfaces de usuário intuitivas e APIs robustas e escaláveis."
+    title: "Front-end Developer",
+    company: "Metaggov (Freelance)",
+    period: "Apr 2025 - Present",
+    description: "Developed and maintained an internal client management system for public agencies. Created reusable components using Vue.js, NuxtJS, and Bulma, optimized performance, and improved accessibility within a Kanban methodology."
   },
   {
-    title: "Software Developer",
-    company: "PUC Minas",
-    period: "2022 - 2022",
-    description: "Participei do desenvolvimento de sistemas internos da universidade, utilizando Java e Spring Boot. Colaborei com equipes multidisciplinares para melhorar a eficiência dos processos acadêmicos."
+    title: "Intern",
+    company: "SIA - Piauí State",
+    period: "Oct 2024 - Present",
+    description: "Developed scalable web applications using Next.js, Nest.js, Go, and Python. Analyzed administrative processes, drafted technical documents, and supported data analysis and project initiatives for the state."
+  },
+  {
+    title: "Developer",
+    company: "CEUT",
+    period: "Jun 2022 - Jun 2024",
+    description: "Led front-end development for a project integrating technology into psychology services, creating an electronic patient record system and an online service platform to improve care for students and the community."
+  },
+  {
+    title: "Fullstack Developer",
+    company: "Balcão Legal (Freelance)",
+    period: "Apr 2022 - Jun 2024",
+    description: "Maintained microservices using Spring Framework and PostgreSQL. Developed the front-end with Next.js, TypeScript, and Tailwind CSS, implementing features based on requirement documents."
   }
 ];
 

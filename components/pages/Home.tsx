@@ -57,7 +57,7 @@ export default function HomePage ({
             <SectionBody className={"flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8"}>
                 <div className={"flex flex-col gap-4 items-center lg:items-start text-center lg:text-left"}>
                     <span className={"text-xl"}>
-                        Full Stack Developer
+                        Front-end Developer
                     </span>
                     
                     <div className={"text-4xl md:text-5xl xl:text-6xl"}>
@@ -72,7 +72,7 @@ export default function HomePage ({
                     <p
                         className={"w-full max-w-xl break-words whitespace-pre-line hyphens-auto"}
                     >
-                        Apaixonado por tecnologia e sempre em busca de novos desafios, sou um desenvolvedor Full Stack com mais de 2 anos de experiência. Tenho um sólido conhecimento em tecnologias como React, Next.js, Node.js e TypeScript, criando soluções inovadoras e resolvendo problemas complexos.
+                        A passionate Front-end Developer who thrives on new challenges and innovative technologies. With a strong command of React, Next.js, Vue, and TypeScript, I specialize in building cutting-edge solutions to solve complex problems.
                     </p>
                     
                     <Link
