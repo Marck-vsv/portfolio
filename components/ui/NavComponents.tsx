@@ -34,7 +34,7 @@ const AnimatedPointer = ({position}: any) => {
             animate={{
                 ...position,
             }}
-            className="absolute z-0 rounded-full bg-tertiary md:h-10"
+            className="absolute z-0 rounded-full bg-tertiary md:h-12"
         />
     );
 };
