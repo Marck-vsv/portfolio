@@ -52,7 +52,7 @@ export default function HomePage ({
         <DefaultSection 
             ref={ref}
             id={`${id}`}
-            className={"relative"}
+            className={"relative pt-24"}
         >
             <SectionBody className={"flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8"}>
                 {/* Text Content */}
