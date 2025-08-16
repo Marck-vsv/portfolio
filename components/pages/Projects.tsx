@@ -10,12 +10,14 @@ const projects = [
     description: "A project aimed at replicating all of Discord's features in a learning context, focusing on real-time communication and server management.",
     technologies: ["Next.js", "NestJS", "TypeScript", "Socket.io", "PostgreSQL"],
     github: "https://github.com/Marck-vsv/marckcord-api",
+    demo: "#"
   },
   {
     title: "Reclame-ali",
     description: "A full-stack application for managing complaints, allowing users to submit issues and track their resolution status.",
     technologies: ["Next.js", "NestJS", "TypeScript", "Tailwind CSS", "PostgreSQL"],
     github: "https://github.com/Marck-vsv/reclame-ali",
+    demo: "#"
   },
 ];
 
