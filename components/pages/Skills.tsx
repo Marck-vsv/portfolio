@@ -42,9 +42,9 @@ export default function Skills({
     <DefaultSection
       ref={ref}
       id={`${id}`}
-      className={"!bg-secondary w-full h-screen"}
+      className={"!bg-secondary"}
     >
-      <SectionBody className={"pt-12"}>
+      <SectionBody>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">Skills</h2>
           <p className="text-tertiary max-w-2xl mx-auto">

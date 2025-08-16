@@ -35,9 +35,9 @@ export default function Experience({
     <DefaultSection
       ref={ref}
       id={`${id}`}
-      className={"!bg-primary w-full h-screen flex flex-col"}
+      className={"!bg-primary"}
     >
-      <SectionBody className={"pt-12 flex-grow overflow-y-auto"}>
+      <SectionBody>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">Experience</h2>
           <p className="text-tertiary max-w-2xl mx-auto">

@@ -54,7 +54,7 @@ export default function HomePage ({
             id={`${id}`}
             className={"relative"}
         >
-            <SectionBody className={"flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 pt-8 lg:pt-0"}>
+            <SectionBody className={"flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8"}>
                 {/* Text Content */}
                 <div className={"flex flex-col gap-4 items-center lg:items-start text-center lg:text-left"}>
                     <span className={"text-xl"}>
