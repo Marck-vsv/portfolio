@@ -62,7 +62,7 @@ export default function HomePage ({
                     
                     <div className={"text-4xl md:text-5xl xl:text-6xl"}>
                         <h1>
-                            Hello, I'm
+                            Hello, I&apos;m
                         </h1>
                         <h2 className={"text-accent"}>
                             Marcos Vinicius<span className={"text-tertiary"}>.</span>

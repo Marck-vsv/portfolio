@@ -92,8 +92,8 @@ export default function Contact({
           >
             <h3 className="text-xl md:text-2xl font-bold text-tertiary mb-6">Get in touch</h3>
             <p className="text-tertiary mb-8">
-              I'm currently available for freelance work and open to new opportunities. 
-              Whether you have a question or just want to say hi, I'll try my best to get back to you!
+              I&apos;m currently available for freelance work and open to new opportunities. 
+              Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
             </p>
             
             <div className="flex flex-wrap gap-4">
@@ -166,7 +166,7 @@ export default function Contact({
               
               {submitSuccess && (
                 <div className="p-3 bg-green-900 text-green-200 rounded-lg">
-                  Message sent successfully! I'll get back to you soon.
+                  Message sent successfully! I&apos;ll get back to you soon.
                 </div>
               )}
               
