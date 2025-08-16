@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { CiMenuFries } from "react-icons/ci";
+import { IoClose } from "react-icons/io5";
 
 const options = [
     {
@@ -106,34 +107,67 @@ export const DesktopNav = () => {
 
 export const MobileNav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const menuVariants = {
+        hidden: { x: "100%" },
+        show: { x: 0, transition: { ease: "easeInOut", duration: 0.4 } },
+        exit: { x: "100%", transition: { ease: "easeInOut", duration: 0.4 } }
+    };
+
+    const linkVariants = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0 }
+    };
     
     return (
-        <aside className={"lg:hidden relative"}>
+        <aside className={"lg:hidden"}>
             <button
-                className={"absolute top-[-1.3rem] right-0"}
-                onClick={() => {
-                    setIsMenuOpen(!isMenuOpen);
-                }}
+                className={"text-accent text-2xl z-30 relative"}
+                onClick={() => setIsMenuOpen(true)}
             >
-                <CiMenuFries
-                    className={"text-accent text-xl"}
-                    size={40}
-                />
+                <CiMenuFries size={38} />
             </button>
-            {isMenuOpen && (
-                <nav
-                    className={""}
-                >
-                    <button
-                        className={"absolute top-[-1.3rem] right-0"}
-                        onClick={() => {
-                            setIsMenuOpen(!isMenuOpen);
-                        }}
+            
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        variants={menuVariants}
+                        initial="hidden"
+                        animate="show"
+                        exit="exit"
+                        className={"fixed top-0 right-0 w-full h-screen bg-primary z-30 flex flex-col items-center justify-center"}
                     >
-                        Fecha aqui
-                    </button>
-                </nav>
-            )}
+                        <button
+                            className={"absolute top-8 right-8 text-accent text-2xl"}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            <IoClose size={45} />
+                        </button>
+                        
+                        <nav className="text-center">
+                            <ul className="flex flex-col gap-8">
+                                {options.map((item, index) => (
+                                    <motion.li
+                                        key={item.title}
+                                        variants={linkVariants}
+                                        initial="hidden"
+                                        animate="show"
+                                        transition={{ delay: 0.4 + index * 0.1 }}
+                                    >
+                                        <Link
+                                            href={item.href}
+                                            onClick={() => setIsMenuOpen(false)}
+                                            className="text-4xl capitalize font-medium text-tertiary hover:text-accent transition-all"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </motion.li>
+                                ))}
+                            </ul>
+                        </nav>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </aside>
     )
 }

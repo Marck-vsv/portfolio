@@ -2,7 +2,7 @@ import DefaultSection from "@/components/ui/Section";
 import SectionBody from "@/components/ui/SectionBody";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function HomePage ({
     ref,
@@ -11,6 +11,43 @@ export default function HomePage ({
     ref?: React.Ref<any>
     id?: string
 }) {
+    const [stats, setStats] = useState([
+        { value: "0+", label: "Years on GitHub" },
+        { value: "0+", label: "Repositories" },
+        { value: "0+", label: "Stars Received" },
+        { value: "0+", label: "Followers" },
+    ]);
+
+    useEffect(() => {
+        const fetchGithubStats = async () => {
+            try {
+                const userResponse = await fetch('https://api.github.com/users/Marck-vsv');
+                if (!userResponse.ok) throw new Error('User not found');
+                const userData = await userResponse.json();
+
+                const reposResponse = await fetch('https://api.github.com/users/Marck-vsv/repos');
+                if (!reposResponse.ok) throw new Error('Repos not found');
+                const reposData = await reposResponse.json();
+
+                const totalStars = reposData.reduce((acc: number, repo: any) => acc + repo.stargazers_count, 0);
+                
+                const yearsOnGitHub = new Date().getFullYear() - new Date(userData.created_at).getFullYear();
+
+                setStats([
+                    { value: `${yearsOnGitHub}+`, label: "Years on GitHub" },
+                    { value: `${userData.public_repos}`, label: "Repositories" },
+                    { value: `${totalStars}`, label: "Stars Received" },
+                    { value: `${userData.followers}`, label: "Followers" },
+                ]);
+
+            } catch (error) {
+                console.error("Failed to fetch GitHub stats:", error);
+            }
+        };
+
+        fetchGithubStats();
+    }, []);
+    
     return (
         <DefaultSection 
             ref={ref}
@@ -59,25 +96,12 @@ export default function HomePage ({
                 
                 <SectionBody className={"lg:absolute lg:bottom-11 lg:left-1/2 lg:-translate-x-1/2"}>
                     <div className={"mt-10 mb-10 lg:mb-0 lg:mt-36 grid grid-cols-2 gap-4 md:gap-0 md:flex justify-between text-center"}>
-                        <div>
-                            <span className={"text-accent text-4xl "}>00+</span> <br/>
-                            <span className={"w-1/3 whitespace-break-spaces"}>Repositories</span>
-                        </div>
-                        
-                        <div>
-                            <span className={"text-accent text-4xl "}>00+</span> <br/>
-                            <span className={"w-1/3 whitespace-break-spaces"}>Repositories</span>
-                        </div>
-                        
-                        <div>
-                            <span className={"text-accent text-4xl "}>00+</span> <br/>
-                            <span className={"w-1/3 whitespace-break-spaces"}>Repositores</span>
-                        </div>
-                        
-                        <div>
-                            <span className={"text-accent text-4xl "}>00+</span> <br/>
-                            <span className={"w-1/3 whitespace-break-spaces"}>Repositories</span>
-                        </div>
+                        {stats.map((stat, index) => (
+                            <div key={index} className="px-2">
+                                <span className={"text-accent text-4xl font-bold"}>{stat.value}</span> <br/>
+                                <span className={"whitespace-pre-wrap text-sm"}>{stat.label}</span>
+                            </div>
+                        ))}
                     </div>
                 </SectionBody>
             </DefaultSection>
